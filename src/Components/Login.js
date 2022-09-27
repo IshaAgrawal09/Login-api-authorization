@@ -29,7 +29,9 @@ const Login = () => {
 
       .then((actualData) => {
         if (!actualData.success) {
-          throw new Error("Invalid UserName or Password");
+          throw new Error(
+            "Username or Password is Invalid, Please fill correct Details"
+          );
         }
         localStorage.setItem("token", actualData.data.token);
         navigate("/home");
@@ -38,7 +40,7 @@ const Login = () => {
         alert(error);
       });
   };
-  
+
   return (
     <div>
       <form>
